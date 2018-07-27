@@ -1,0 +1,420 @@
+    1  exit
+    2  ssh-keygen
+    3  ssh-copy-id ansible_admin@172.31.29.61
+    4  cd /
+    5  ls
+    6  cd /home/
+    7  ls
+    8  cd ..
+    9  ls
+   10  cd /dev
+   11  ls
+   12  cd ..
+   13  cd /etc
+   14  ls
+   15  cd ssh
+   16  ls
+   17  vi sshd_config 
+   18  cd
+   19  sudo cat ~/.ssh/id_rsa.pub | ssh ansible_admin@172.31.29.61 'cat >> .ssh/authorized_keys && echo "keys copied"'
+   20  cd /etc/ssh
+   21  vi sshd_config 
+   22  sudo vi sshd_config 
+   23  cd
+   24  reboot
+   25  sudo reboot
+   26  exit
+   27  cd
+   28  cd /etc/ansible/
+   29  sudo vi playbooks
+   30  ls
+   31  rm playbooks 
+   32  sudo rm playbooks 
+   33  mkdir playbooks
+   34  sudo mkdir playbooks
+   35  cd playbooks/
+   36  sudo vi copy_file.yaml
+   37  ls
+   38  ansible-playbooks copy_file.yaml 
+   39  ansible-playbook copy_file.yaml 
+   40  vi copy_file.yaml 
+   41  sudo vi copy_file.yaml 
+   42  ansible-playbook copy_file.yaml 
+   43  sudo vi copy_file.yaml 
+   44  clear
+   45  ansible-playbook copy_file.yaml 
+   46  sudo vi copy_file.yaml 
+   47  ansible-playbook copy_file.yaml 
+   48  cd ..
+   49  cat hosts 
+   50  :wq!
+   51  cd playbooks/
+   52  sudo ansible-playbook copy_file.yaml 
+   53  sudo vi copy_file.yaml 
+   54  sudo ansible-playbook copy_file.yaml 
+   55  cd
+   56  ssh ansible_admin@172.31.29.61 
+   57  ansible-playbook /etc/ansible/playbooks/copy_file.
+   58  ansible-playbook /etc/ansible/playbooks/copy_file.yaml 
+   59  sudo vi /etc/ansible/playbooks/copy_file.yaml 
+   60  ansible-playbook /etc/ansible/playbooks/copy_file.yaml 
+   61  ls
+   62  ssh ansible_admin@172.31.29.61 
+   63  ls
+   64  ansible-playbook /etc/ansible/playbooks/copy_file.yaml 
+   65  cd ~/
+   66  ls
+   67  cd test_ansible/
+   68  ls
+   69  cd ..
+   70  cd..
+   71  ssh ansible_admin@172.31.29.61 
+   72  ssh ansible_admin@172.31.28.90
+   73  sudo cat /etc/ansible/playbooks/copy_file.yaml 
+   74  ls
+   75  sudo vi /etc/fstab 
+   76  sudol vi /etc/ansible/playbooks/copy_file.yaml 
+   77  sudo vi /etc/ansible/playbooks/copy_file.yaml 
+   78  vi hi
+   79  sudo vi /etc/ansible/playbooks/copy_file.yaml 
+   80  ansible-playbook /etc/ansible/playbooks/copy_file.yaml 
+   81  sudo vi /etc/ansible/playbooks/copy_file.yaml 
+   82  ansible-playbook /etc/ansible/playbooks/copy_file.yaml 
+   83  ls
+   84  sudo vi /etc/ansible/playbooks/copy_file.yaml 
+   85  ansible webservers -m setup -a 'filter: *ipv4*'
+   86  ansible webservers -m setup -a 'filter=*ipv4*'
+   87  ansible webservers -m setup --tree hosts_details
+   88  ls
+   89  cd hosts_details/
+   90  ls
+   91  vi 172.31.28.90 
+   92  cat 172.31.28.90 
+   93  :wq
+   94  clear
+   95  cd
+   96  ansible -list--hosts
+   97  ansible --list-hosts
+   98  ansible all  --list-hosts
+   99  ansible all --list-hosts
+  100  ansible webservers -m -s yum -a 'name=httpd state=latest'
+  101  ansible webservers -m yum -a 'name=httpd state=latest'
+  102  ansible webservers -sm yum -a 'name=httpd state=latest'
+  103  ansible webservers -sm apt -a 'name=httpd state=latest'
+  104  ansible localhost -sm apt -a 'name=httpd state=latest'
+  105  ansible localhost -sm apt -a 'name=apache2 state=latest'
+  106  ansible all --list-hosts
+  107  cat /etc/ansible/hosts 
+  108  ansible testservers -sm yum -a 'name=httpd state=latest'
+  109  cat /etc/ansible/hosts 
+  110  ansible Testservers -sm yum -a 'name=httpd state=latest'
+  111  ansible Testserver -sm yum -a 'name=httpd state=latest'
+  112  cat /etc/ansible/hosts 
+  113  ansible TestServer -sm yum -a 'name=httpd state=latest'
+  114  ansible TestServers -sm yum -a 'name=httpd state=latest'
+  115  ansible TestServers -sm service -a 'name=httpd state=restarted'
+  116  cd
+  117  ansible webservers -m setup -a 'filter=*variable*
+  118  ansible webservers -m setup -a 'filter=*variable*'
+  119  ansible webservers -m setup -a 'filter=*ipv4*'
+  120  cd /etc/ansible/playbooks/
+  121  ls
+  122  rm copy_file.retry 
+  123  sudo rm copy_file.retry 
+  124  ls
+  125  vi variable_example.yaml
+  126  sudo vi variable_example.yaml
+  127  ansible-playbook variable_example.yaml 
+  128  sudo vi variable_example.yaml
+  129  ansible-playbook variable_example.yaml 
+  130  sudo vi variable_example.yaml
+  131  ansible-playbook variable_example.yaml 
+  132  sudo vi variable_example.yaml
+  133  ansible-playbook variable_example.yaml 
+  134  sudo vi variable_example.yaml
+  135  ansible-playbook variable_example.yaml 
+  136  sudo vi variable_example.yaml
+  137  cp variable_example.yaml variablecp.yaml
+  138  sudo cp variable_example.yaml variablecp.yaml
+  139  vi variablecp.yaml 
+  140  sudo vi variablecp.yaml 
+  141  ansible-playbook variable_example.yaml --extrs-vars "myhosts=TestServers myusers=ansible_admin tool=git"
+  142  ansible-playbook variable_example.yaml --extra-vars "myhosts=TestServers myusers=ansible_admin tool=git"
+  143  ansible TestServers -m yum -a 'name=git state=abscent'
+  144  ansible TestServers -m yum -a 'name=git state=absent'
+  145  ansible TestServers -sm yum -a 'name=git state=absent'
+  146  ansible-playbook variable_example.yaml --extra-vars "myhosts=TestServers myusers=ansible_admin tool=git"
+  147  ssh ansible_admin@172.31.28.90
+  148  cd
+  149  ansible TestServers -m yum -a 'name=git state=absent'
+  150  ls
+  151  cd /etc/ansible/playbooks/
+  152  ls
+  153  sudo vi variablecp.yaml 
+  154  ansible-playbook variablecp.yaml --extra-vars "myhosts=TestServers myusers=ansible_admin tool=git"
+  155  ansible TestServers -m yum -a 'name=git state=absent'
+  156  ansible TestServers -sm yum -a 'name=git state=absent'
+  157  ansible-playbook variablecp.yaml --extra-vars "myhosts=TestServers myusers=ansible_admin tool=git"
+  158  ansible-playbook variablecp.yaml --extra-vars "myhosts=TestServers myusers=ansible_admin tool=git" >> ~/him
+  159  cd
+  160  vi hi
+  161  ls
+  162  sudo su -
+  163  ls
+  164  cd /etc/ansible/playbooks/
+  165  ls
+  166  sudo vi example.yaml
+  167  sudo ansible-playbook example.yaml 
+  168  sudo vi example.yaml
+  169  sudo ansible-playbook example.yaml 
+  170  sudo vi example.yaml
+  171  sudo ansible-playbook example.yaml 
+  172  ansible-playbook example.yaml 
+  173  sudo vi example.yaml
+  174  ansible-playbook example.yaml 
+  175  sudo vi example.yaml
+  176  cd
+  177  ssh ansible_admin@172.31.29.61
+  178  cd /etc/ansible/playbooks/
+  179  sudo vi example.yaml 
+  180  ansible-playbook example.yaml 
+  181  ssh ansible_admin@172.31.28.90
+  182  cp example.yaml httpd.yaml
+  183  sudo cp example.yaml httpd.yaml
+  184  sudo vi httpd.yaml 
+  185  ansible TestServers -sm yum -a 'name=httpd state=absent'
+  186  ansible-playbook httpd.yaml 
+  187  ansible-playbook httpd.retry
+  188  ansible-playbook httpd.yaml 
+  189  sudo vi httpd.yaml 
+  190  ansible-playbook httpd.yaml 
+  191  sudo vi httpd.yaml 
+  192  ansible-playbook httpd.yaml 
+  193  ansible TestServers -sm yum -a 'name=httpd state=latest'
+  194  ssh ansible_admin@172.31.28.90
+  195  ansible TestServers -sm yum -a 'state=update' 
+  196  ansible TestServers -sm yum -a 'name=* state=latest' 
+  197  ssh ansible_admin@172.31.29.61
+  198  ansible-playbook httpd.yaml 
+  199  ansible TestServers -sm yum -a 'name=httpd state=latest'
+  200  ssh ansible_admin@172.31.28.61
+  201  ssh ansible_admin@172.31.28.90
+  202  ssh ansible_admin@172.31.29.90
+  203  ssh ansible_admin@172.31.28.90
+  204  vi example.yaml 
+  205  vi httpd.yaml 
+  206  sudo vi httpd.yaml 
+  207  ansible-playbook httpd.yaml 
+  208  ssh ansible_admin@172.31.29.61
+  209  ansible-playbook httpd.yaml 
+  210  sudo vi httpd.yaml 
+  211  ansible-playbook httpd.yaml 
+  212  ansible-playbook httpd.yaml  >> install_details
+  213  ansible-playbook httpd.yaml  >> install_details sudo
+  214  ansible-playbook httpd.yaml  >>cat install_details sudo
+  215  ansible-playbook httpd.yaml  > install_details sudo
+  216  sudo ansible-playbook httpd.yaml  > install_details
+  217  sudo ansible-playbook httpd.yaml  
+  218  ansible TestServers -i Test_hosts -sm yum -a "name=php state=latest"
+  219  ls
+  220  cd test_ansible/
+  221  ls
+  222  cat test 
+  223  :wq
+  224  cd
+  225  cd /etc/ansible/playbooks/
+  226  ls
+  227  vi php_remove.yml
+  228  sudo vi php_remove.yml
+  229  ansible-playbook php_remove.yml 
+  230  sudo vi php_remove.yml
+  231  ansible-playbook php_remove.yml 
+  232  sudo vi php_remove.yml
+  233  ansible-playbook php_remove.yml 
+  234  ls
+  235  vi variable.y
+  236  vi variable_example.yaml 
+  237  sudo vi php_remove.yml 
+  238  ansible-playbook php_remove.yml 
+  239  sudo vi php_remove.yml 
+  240  ls
+  241  cd
+  242  ls
+  243  cd /etc/ansible/playbooks/
+  244  ls
+  245  sudo vi variable_example.yaml 
+  246  sudo vi php_remove.yml 
+  247  ansible-playbook php_remove.yml 
+  248  sudo vi variable_example.yaml 
+  249  sudo vi php_remove.yml 
+  250  ansible-playbook php_remove.yml 
+  251  sudo vi php_remove.yml 
+  252  ansible-playbook php_remove.yml 
+  253  sudo vi php_remove.yml 
+  254  ansible-playbook php_remove.yml -i Test_Servers
+  255  cd
+  256  ansible Test_Servers -i Test_hosts -a 'touch nEW_file'
+  257  ansible Test_Servers -i Test_hosts -sa 'touch nEW_file'
+  258  ls
+  259  vi Test_hosts 
+  260  ansible Test_Servers -i Test_hosts -sa 'touch nEW_file'
+  261  vi Test_hosts 
+  262  ansible Test_Servers -i Test_hosts -sa 'touch nEW_file'
+  263  vi Test_hosts 
+  264  ansible Test_Servers -i Test_hosts -s -a 'touch nayafile'
+  265  ansible Test_Servers -i Test_hosts -b -a 'touch nayafile'
+  266  cat /etc/ansible/hosts 
+  267  vi Test_hosts 
+  268  ansible TestServers -i Test_hosts -b -a 'touch nayafile'
+  269  sudo vi php_remove.yml 
+  270  ls
+  271  sudo vi /etc/ansible/playbooks/php_remove.yml 
+  272  ansible-playbook /etc/ansible/playbooks/php_remove.yml 
+  273  ls
+  274  ansible webservers -bm file -a 'chmod 0666'
+  275  ansible webservers -b -m file -a 'chmod 0666'
+  276  ansible webservers -b -m file -a 'chmod 666'
+  277  ansible webservers -b -m file -a 'dest=~/neW_file mode=666'
+  278  ls
+  279  ansible webservers -b -m file -a 'dest=~/nEW_file mode=666'
+  280  ansible webservers -b -m file -a 'dest=~/nEW_file mode=666' --become-user ansible_admin
+  281  ansible webservers -b -m file -a 'dest=~/nEW_file mode=444'
+  282  ssh anisbele-admin@172.31.28.90
+  283  ssh sbele-admin@172.31.28.90
+  284  ls
+  285  cd /etc/ansible/playbooks/
+  286  ls
+  287  sudo vi php_remove.yml 
+  288  ansible-playbook -i ~/Test_hosts php_remove.yml 
+  289  sudo vi php_remove.yml 
+  290  vi variable_example.yaml 
+  291  sudo vi php_remove.yml 
+  292  ansible-playbook -i ~/Test_hosts php_remove.yml 
+  293  vi variable_example.yaml 
+  294  sudo vi php_remove.yml 
+  295  ansible-playbook -i ~/Test_hosts php_remove.yml 
+  296  cd
+  297  ansible -i Test_hosts -a 'hostname'
+  298  ansible -i Test_hosts TestServers -a 'hostname'
+  299  ls
+  300  vi Test_hosts 
+  301  ansible -i Test_hosts TestServers -a 'hostname'
+  302  ssh ansible_admin@172.31.28.90
+  303  ssh-copy-id root@172.31.28.90
+  304  ssh root@172.31.28.90
+  305  ansible -i Test_hosts TestServers -a 'hostname'
+  306  ssh root@172.31.28.90
+  307  ssh ansible_admin@172.31.29.61
+  308  shutdown
+  309  sudo shutdown
+  310  exit
+  311  ls
+  312  ls 
+  313  rm Host_variables/
+  314  rm -rf Host_variables/
+  315  mkdir Test_hosts
+  316  mkdir Host_vars
+  317  vi Host_vars/ec2-35-167-83-140.us-west-2.compute.amazonaws.com.yml
+  318  ansible -i Test_hosts TestServers -a "cat {{ Hostbackup }}"
+  319  vi Test_hosts 
+  320  vi Host_vars/ec2-35-167-83-140.us-west-2.compute.amazonaws.com.yml
+  321  ssh ansible_admin@172.31.29.61
+  322  ssh ansible_admin@172.31.28.90
+  323  pwd
+  324  ansible -i Test_hosts TestServers -a "ls {{ Hostbackup }}"
+  325  ls
+  326  vi hosts_details/
+  327  rm -rf hosts_details/ him
+  328  rm nEW_file 
+  329  ls
+  330  rm 1 hi
+  331  ls
+  332  rm -rf test_ansible/
+  333  vi Host_vars/ec2-35-167-83-140.us-west-2.compute.amazonaws.com.yml 
+  334  ansible -i Test_hosts TestServers -a "ls {{ Hostbackup }}"
+  335  vi Host_vars/ec2-35-167-83-140.us-west-2.compute.amazonaws.com.yml 
+  336  ansible TestServers -i Test_hosts -b -m file -a "path={{ Hostbackup }} state=file"
+  337  vi Test_hosts 
+  338  ansible TestServers -i Test_hosts -b -m file -a "path={{ Hostbackup }} state=file"
+  339  ansible TestServers -i Test_hosts -b -m file -a "cat {{ HostBackup }}"
+  340  ansible TestServers -i Test_hosts -b -a "ls {{ HostBackup }}"
+  341  ansible TestServers -i Test_hosts -b -a "cat {{ Hostbackup }}"
+  342  ansible TestServers -i Test_hosts -b -a 'cat /home/ansible_admin/hosts_backup 
+  343  ansible TestServers -i                                                Test_hosts -b -a 'cat /home/ansible_admin/hosts_backup'
+  344  ansible TestServers -i Test_hosts -b -a "cat {{ Hostbackup }}"
+  345  vi Test_hosts 
+  346  ls
+  347  vi Host_vars/ec2-35-167-83-140.us-west-2.compute.amazonaws.com.yml 
+  348  ansible -i Test_hosts TestServers -a "cat {{ Hostbackup }}"
+  349  ansible -i Test_hosts TestServers -a "ls {{ Hostbackup }}"
+  350  ansible -i Test_hosts TestServers -b -a "ls {{ Hostbackup }}"
+  351  ansible -i Test_hosts TestServers -b -a "cat {{ Hostbackup }}"
+  352  ls
+  353  cd Host_vars/
+  354  rm ec2-35-167-83-140.us-west-2.compute.amazonaws.com.yml 
+  355  vi TestServers.yml
+  356  cd
+  357  ansible -i Test_hosts TestServers -b -a "cat {{ Hostbackup }}"\
+  358  ansible -i Test_hosts TestServers -b -a "cat {{ Hostbackup }}"
+  359  rm Host_vars/TestServers.yml 
+  360  ls
+  361  cd Host_vars/
+  362  ls
+  363  mkdir TestServers
+  364  log_settings.yml
+  365  vi log_settings.yml
+  366  cd
+  367  ansible -i Test_hosts TestServers -b -a "mkdir /opt/logs"
+  368  vi Test_hosts"
+  369  vi Test_hosts
+  370  cd Host_vars/TestServers/
+  371  ls
+  372  cd ..
+  373  ls
+  374  cat TestServers/
+  375  mv log_settings.yml ~/Host_vars/TestServers/
+  376  ls
+  377  cd TestServers/
+  378  cd
+  379  vi Test_hosts 
+  380  ansible -i Test_hosts TestServers -b -m file -a "path={{ log_settings }} state=directory"
+  381  vi Test_hosts 
+  382  ansible -i Test_hosts TestServers -b -m file -a "path={{ log_settings }} state=directory"
+  383  ansible -i Test_hosts TestServers -b -a "ls {{ log_settings }}"
+  384  ansible TestServers -i Test_hosts /home/ansible_admin/Host_vars/TestServers/log_settings.yml  -b -a "ls {{ log_settings }}"
+  385  ansible -i Test_hosts /home/ansible_admin/Host_vars/TestServers/log_settings.yml  -b -a "ls {{ log_settings }}"
+  386  ansible webservers -i /home/ansible_admin/Host_vars/TestServers/log_settings.yml  -b -a "ls {{ log_settings }}"
+  387  ansible all  -i /home/ansible_admin/Host_vars/TestServers/log_settings.yml  -b -a "ls {{ log_settings }}"
+  388  exit
+  389  hostname
+  390  ansible all -b -m ping
+  391  ansible Test_hosts -b -m ping
+  392  ansible -i Test_hosts TestServers -b -m ping
+  393  ls
+  394  ansible -i Test_hosts TestServers -b -a "/usr/bin/foo" -u ansible_admin
+  395  ansible -i Test_hosts TestServers -b -a "/usr/bin" -u ansible_admin
+  396  ssh ansible_admin@172.31.28.90 
+  397  ansible -i Test_hosts TestServers -b -a "mkdir Testing" -u ansible_admin
+  398  ansible -i Test_hosts TestServers -b -a "mkdir Testing" -u root
+  399  ansible -i Test_hosts TestServers -b -a "name= Testing state=directory" -u root
+  400  ansible -i Test_hosts TestServers -b -a "name= Testing state=directory" -b --become-user root
+  401  ansible -i Test_hosts TestServers -b -a "name= Testing state=directory"  --become-user root
+  402  ansible -i Test_hosts TestServers -b -m file -a "name= Testing state=directory"  --become-user root
+  403  ansible -i Test_hosts TestServers -b -m file -a "name=Testing state=directory"  --become-user root
+  404  ansible -i Test_hosts TestServers -b -m file -a "name=Testing state=directory"  --become-user ec2-user
+  405  ansible -i Test_hosts TestServers  -m file -a "name=Testing state=directory"  --become-user ec2-user
+  406  ansible -i Test_hosts TestServers  -m file -a "name=Testing state=directory"  -u ansible_admin --ask-become-pass
+  407  ansible -i Test_hosts TestServers  -m file -a "name=Testing state=directory"  -u root --ask-become-pass
+  408  ansible -i Test_hosts TestServers  -m file -a "name=Testing state=directory mode=0555"  -u root --ask-become-pass
+  409  ansible -i Test_hosts TestServers  -m file -a "name=Testing state=directory mode=0555 owner=ansible_admin"  -u root --ask-become-pass
+  410  ls
+  411  ansible -i Test_hosts TestServers  -m file -a "name=Testing state=directory mode=0555 owner=ansible_admin"  
+  412  ansible -i Test_hosts TestServers -b  -m file -a "name=Testing state=directory mode=0555 owner=ansible_admin"  
+  413  cd
+  414  ansible -i Test_hosts TestServers -b  -m file -a "name=Testing state=directory mode=0555 owner=ansible_admin"  --become-user ec2-user
+  415  ansible -i Test_hosts TestServers -b  -m file -a "name=Testing state=directory mode=0555 owner=ansible_admin"  --become-user root
+  416  ansible -i Test_hosts TestServers  -m file -a "name=Testing state=directory mode=0555 owner=ansible_admin"  --become-user ec2-user
+  417  ansible -i Test_hosts TestServers  -m file -a "name=Testing state=directory mode=0555 owner=ansible_admin"  --become-user ansible_admin
+  418  ansible -i Test_hosts TestServers -b  -m file -a "name=Testing state=directory mode=0555 owner=ansible_admin"  --become-user ansible_admin
+  419  history
+  420  history >> ANSIBLE_ADHOC_COMMANDS
