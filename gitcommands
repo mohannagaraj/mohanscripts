@@ -1,0 +1,164 @@
+    1  yum intall git
+    2  yum install git
+    3  ls
+    4  git --version
+    5  mkdir git
+    6  cd git/
+    7  ls
+    8  git int .
+    9  git init .
+   10  ls
+   11  ls -la
+   12  cd .git/
+   13  ls
+   14  ls -la
+   15  git config --global user.name "mohannagaraj"
+   16  git config --global user.email "mohinstru87@gmail.com"
+   17  git config --system core.editor
+   18  git config --system core.editor "/bin/vi"
+   19  cd /etc/
+   20  ls
+   21  cat gitconfig 
+   22  cd ~/git/
+   23  ls
+   24  vi helloworld.py
+   25  git config user.name "mohannagaraj"
+   26  git config user.email "mohinstru87@gmail.com"
+   27  git add .
+   28  git status
+   29  git commit -m " A new py file added "
+   30  vi tesd.py
+   31  py tesd.py 
+   32  yum install python
+   33  py tesd.py 
+   34  python tesd.py 
+   35  ls
+   36  clear
+   37  ls
+   38  git status
+   39  vi helloworld.py 
+   40  git status
+   41  git commit -a
+   42  git status
+   43  git add
+   44  git add .
+   45  git commit  -A
+   46  git commit -A
+   47  git commit -m "you have addded second file"
+   48  git status
+   49  git revert
+   50  git log
+   51  git log --oneline
+   52  git log --oneline -- helloworld.py 
+   53  git log
+   54  git log --author
+   55  git log --author"helloworld.py" 
+   56  git log --author="helloworld.py" 
+   57  git log --author="user" 
+   58  git log --author="mohannagaraj" 
+   59  git log --grep="miss"
+   60  git log --author="mohannagaraj" 
+   61  git log --grep="miss"
+   62  git log --graph
+   63  git log --graph --decorate
+   64  cd ..
+   65  cd git/
+   66  git clone ~/git /home/ec2-user/
+   67  cd /home/ec2-user/
+   68  git clone ~/git/
+   69  ls
+   70  cd ..
+   71  cd
+   72  git clone https://github.com/mohannagaraj/mohanscripts.git
+   73  ls
+   74  git push origin master
+   75  cd git/
+   76  git push origin master
+   77  ls
+   78  ls -la
+   79  git push
+   80  git remote add git https://github.com/mohannagaraj/mohanscripts.git
+   81  git push
+   82  git push git
+   83  git pull
+   84  git pull https://github.com/mohannagaraj/mohanscripts.git
+   85  git push git
+   86  git config --global core.excludesfile
+   87  git config --global core.excludesfile "/etc/gitconfig" 
+   88  vi /etc/gitconfig 
+   89  git config --global core.excludesfile "/etc/gitignore"
+   90  vi /etc/gitconfig 
+   91  cd /etc
+   92  cd /etc/
+   93  vi gitignore
+   94  cd ~/git/
+   95  ls
+   96  vi hello.rby
+   97  ls
+   98  git status
+   99  ls -la
+  100  vi .gitignore
+  101  vi di.c
+  102  ls
+  103  git status
+  104  git add
+  105  git add >
+  106  git add .
+  107  git commit -m " All updated"
+  108  git status
+  109  ls -la
+  110  git branch
+  111  git branch mohan
+  112  ls
+  113  git branch
+  114  git checkout mohan
+  115  ls -la
+  116  git status
+  117  mkdir branchcommits
+  118  git status
+  119  ls 
+  120  vi hai.py
+  121  git status
+  122  cd
+  123  cd git/
+  124  git checkout -b development
+  125  vi dev.c
+  126  vi .gitignore 
+  127  vi bai.bat
+  128  ls
+  129  git checkout -b QA
+  130  ls
+  131  vi heelo.c
+  132  git push origin master
+  133  git push git
+  134  git branch
+  135  git push origin QA
+  136  git push QA
+  137  git push origin QA
+  138  git push git QA
+  139  git branch
+  140  git push git development
+  141  git push git mohan
+  142  git merge QA
+  143  git branch
+  144  git checkput development
+  145  git checkout development
+  146  git merge QA
+  147  git merge mohan
+  148  git merge master
+  149  git merge development
+  150  git checkout mohan
+  151  git merge development
+  152  git checkout mohan
+  153  git merge master
+  154  git merge QA
+  155  git branch
+  156  git checkout master
+  157  git merge QA
+  158  git checkout master
+  159  git checkout development
+  160  git checkout mohan
+  161  git push git
+  162  exit
+  163  history
+  164  history >> ~/git/gitcommands
